@@ -56,6 +56,10 @@ for path, dirs, files in os.walk(coversDir):
         data.append(item)
 
 
+# Create data/ directory
+if not os.path.exists('data/'):
+    os.makedirs('data')
+    
 # Save data to json file
-with open('album-covers-data.json', 'w') as f:
+with open('data/album-covers-data.json', 'w') as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
